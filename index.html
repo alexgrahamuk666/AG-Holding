@@ -1,2 +1,279 @@
-a-graham.uk<br />
-a-graham.co.uk
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Graham | a-graham.uk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+         {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fef9f3 0%, #e8f4f8 50%, #fce7f3 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            padding: 2rem;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .logo a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo a:hover {
+            color: #8b5cf6;
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 4px;
+            height: 1em;
+            background: #8b5cf6;
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #6b7280;
+            margin-bottom: 3rem;
+        }
+
+        .decorations {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .decoration {
+            font-size: 2.5rem;
+            animation: float 3s ease-in-out infinite;
+            cursor: default;
+            transition: transform 0.3s ease;
+        }
+
+        .decoration:hover {
+            transform: scale(1.3) rotate(10deg);
+        }
+
+        .decoration:nth-child(1) { animation-delay: 0s; }
+        .decoration:nth-child(2) { animation-delay: 0.5s; }
+        .decoration:nth-child(3) { animation-delay: 1s; }
+        .decoration:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .description {
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: rgba(139, 92, 246, 0.1);
+            color: #7c3aed;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 2rem;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+
+        / Floating background elements */
+        .bg-shape {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-shape-1 {
+            width: 300px;
+            height: 300px;
+            background: #8b5cf6;
+            top: -100px;
+            right: -50px;
+            animation: floatBg 20s ease-in-out infinite;
+        }
+
+        .bg-shape-2 {
+            width: 200px;
+            height: 200px;
+            background: #ec4899;
+            bottom: -50px;
+            left: -50px;
+            animation: floatBg 25s ease-in-out infinite reverse;
+        }
+
+        .bg-shape-3 {
+            width: 150px;
+            height: 150px;
+            background: #06b6d4;
+            top: 50%;
+            left: 10%;
+            animation: floatBg 18s ease-in-out infinite;
+        }
+
+        @keyframes floatBg {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        @media (max-width: 480px) {
+            .decorations {
+                gap: 1rem;
+            }
+            
+            .decoration {
+                font-size: 2rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+    -->
+    <div class="container">
+        <div class="logo"><a href="https://a-graham.uk">a-graham.uk</a></div>
+        
+        <h1>Nothing here<span class="cursor"></span></h1>
+        <p class="subtitle">...yet</p>
+
+        <div class="decorations">
+            <span class="decoration" title="Code">💻</span>
+            <span class="decoration" title="Music">🎹</span>
+            <span class="decoration" title="Ideas">💡</span>
+            <span class="decoration" title="Chaos">🦆</span>
+        </div> 
+
+        <p class="description">
+            Hi, I'm <strong>Alex</strong>. Software developer by day, 
+            questionable music producer by night. This site will eventually 
+            contain technical articles, useful links, and a healthy dose 
+            of stupid stuff.
+        </p>
+
+        <div class="tags">
+            <span class="tag">code</span>
+            <span class="tag">music</span>
+            <span class="tag">tech articles</span>
+            <span class="tag">useful links</span>
+            <span class="tag">stupid stuff</span>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/alexgrahamuk666" target="_blank" rel="noopener">[github]</a>
+        </div>
+    </div>
+
+    <footer>
+        🚧 Coming soon™
+    </footer>
+</body>
+</html>
