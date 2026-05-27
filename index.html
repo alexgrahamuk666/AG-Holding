@@ -1,279 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Graham | a-graham.uk</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-         {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #fef9f3 0%, #e8f4f8 50%, #fce7f3 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            padding: 2rem;
-        }
+  <!-- ═══════════════════════════════════════
+       SEO
+  ═══════════════════════════════════════ -->
+  <title>ingenious. · Yet Another Ingenious Solution · a-graham.uk</title>
+  <meta name="description" content="Yet Another Ingenious Solution. Alex Graham — software developer, IoT tinkerer, audio hacker and builder of things that probably shouldn't work. North East England."/>
+  <meta name="keywords" content="Alex Graham, ingenious, software developer, IoT, Silverstripe, PHP 8, JavaScript, Linux, VMware, ESXi, BookN, sunderlandscan, techno trance, happy hardcore, makina, BPM analysis, North East England, Sunderland, web development, multi-tenant, BBC News, BigJimSlizards"/>
+  <meta name="author" content="Alex Graham"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://a-graham.uk/"/>
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://a-graham.uk/"/>
+  <meta property="og:title"       content="ingenious. · Yet Another Ingenious Solution"/>
+  <meta property="og:description" content="Alex Graham. Software developer. IoT tinkerer. Audio hacker. North East England. Building things that probably shouldn't work since forever."/>
+  <meta property="og:locale"      content="en_GB"/>
+  <meta name="twitter:card"       content="summary"/>
+  <meta name="twitter:title"      content="ingenious. · Yet Another Ingenious Solution"/>
+  <meta name="twitter:description" content="Alex Graham. Software developer. North East England."/>
 
-        .container {
-            text-align: center;
-            max-width: 600px;
-        }
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Alex Graham",
+    "url":"https://a-graham.uk",
+    "sameAs":["https://github.com/alexgrahamuk666","https://ingenious-solutions.co.uk","https://sunderlandscan.com"],
+    "jobTitle":"Senior Software Developer",
+    "knowsAbout":["PHP","Silverstripe","JavaScript","IoT","Linux","VMware","ESXi","Web Architecture","Multi-tenant Systems","Raspberry Pi","Network Architecture","Audio DSP","BPM Analysis","RAID","NAS"],
+    "description":"Senior software developer with 20+ years experience. Multi-tenant SaaS, IoT, legacy modernisation, audio DSP. North East England.",
+    "address":{"@type":"PostalAddress","addressLocality":"Sunderland","addressRegion":"North East England","addressCountry":"GB"}
+  }
+  </script>
 
-        .logo {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.2rem;
-            color: #6b7280;
-            margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-        }
-
-        .logo a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .logo a:hover {
-            color: #8b5cf6;
-        }
-
-        h1 {
-            font-family: 'Space Mono', monospace;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 4px;
-            height: 1em;
-            background: #8b5cf6;
-            margin-left: 4px;
-            animation: blink 1s step-end infinite;
-            vertical-align: middle;
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: #6b7280;
-            margin-bottom: 3rem;
-        }
-
-        .decorations {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .decoration {
-            font-size: 2.5rem;
-            animation: float 3s ease-in-out infinite;
-            cursor: default;
-            transition: transform 0.3s ease;
-        }
-
-        .decoration:hover {
-            transform: scale(1.3) rotate(10deg);
-        }
-
-        .decoration:nth-child(1) { animation-delay: 0s; }
-        .decoration:nth-child(2) { animation-delay: 0.5s; }
-        .decoration:nth-child(3) { animation-delay: 1s; }
-        .decoration:nth-child(4) { animation-delay: 1.5s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .description {
-            color: #4b5563;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 3rem;
-        }
-
-        .tag {
-            background: rgba(139, 92, 246, 0.1);
-            color: #7c3aed;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            background: rgba(139, 92, 246, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: #6b7280;
-            text-decoration: none;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .social-links a:hover {
-            color: #8b5cf6;
-            background: rgba(139, 92, 246, 0.1);
-            border-color: rgba(139, 92, 246, 0.2);
-        }
-
-        footer {
-            position: fixed;
-            bottom: 2rem;
-            font-size: 0.85rem;
-            color: #9ca3af;
-        }
-
-        / Floating background elements */
-        .bg-shape {
-            position: fixed;
-            border-radius: 50%;
-            opacity: 0.1;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .bg-shape-1 {
-            width: 300px;
-            height: 300px;
-            background: #8b5cf6;
-            top: -100px;
-            right: -50px;
-            animation: floatBg 20s ease-in-out infinite;
-        }
-
-        .bg-shape-2 {
-            width: 200px;
-            height: 200px;
-            background: #ec4899;
-            bottom: -50px;
-            left: -50px;
-            animation: floatBg 25s ease-in-out infinite reverse;
-        }
-
-        .bg-shape-3 {
-            width: 150px;
-            height: 150px;
-            background: #06b6d4;
-            top: 50%;
-            left: 10%;
-            animation: floatBg 18s ease-in-out infinite;
-        }
-
-        @keyframes floatBg {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(120deg); }
-            66% { transform: translate(-20px, 20px) rotate(240deg); }
-        }
-
-        @media (max-width: 480px) {
-            .decorations {
-                gap: 1rem;
-            }
-            
-            .decoration {
-                font-size: 2rem;
-            }
-
-            .social-links {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!--
-    <div class="bg-shape bg-shape-1"></div>
-    <div class="bg-shape bg-shape-2"></div>
-    <div class="bg-shape bg-shape-3"></div>
-    -->
-    <div class="container">
-        <div class="logo"><a href="https://a-graham.uk">a-graham.uk</a></div>
-        
-        <h1>Nothing here<span class="cursor"></span></h1>
-        <p class="subtitle">...yet</p>
 
-        <div class="decorations">
-            <span class="decoration" title="Code">💻</span>
-            <span class="decoration" title="Music">🎹</span>
-            <span class="decoration" title="Ideas">💡</span>
-            <span class="decoration" title="Chaos">🦆</span>
-        </div> 
+<div class="page">
 
-        <p class="description">
-            Hi, I'm <strong>Alex</strong>. Software developer by day, 
-            questionable music producer by night. This site will eventually 
-            contain technical articles, useful links, and a healthy dose 
-            of stupid stuff.
-        </p>
+  <!-- ══════════════════════════════════
+       TOP BAR
+  ══════════════════════════════════ -->
+  <nav class="topbar rev r1" aria-label="Site navigation">
+    <a class="topbar-logo" href="https://a-graham.uk" aria-label="a-graham.uk home">
+      <div class="topbar-mark">
+        <!-- Lightbulb mark -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12.87V17H8v-2.13A7 7 0 0 1 12 2z"/>
+        </svg>
+      </div>
+      <div class="topbar-brand">a-graham<span class="amber">.</span>uk</div>
+    </a>
+    <div class="topbar-nav">
+      <a class="topbar-link" href="https://cv.a-graham.uk">CV</a>
+      <span class="topbar-sep">·</span>
+      <a class="topbar-link" href="https://ingenious-solutions.co.uk" target="_blank" rel="noopener">ingenious-solutions.co.uk</a>
+      <span class="topbar-sep">·</span>
+      <a class="topbar-link" href="https://sunderlandscan.com" target="_blank" rel="noopener">sunderlandscan</a>
+      <span class="topbar-sep">·</span>
+      <a class="topbar-link" href="https://github.com/alexgrahamuk666" target="_blank" rel="noopener">github</a>
+    </div>
+  </nav>
 
-        <div class="tags">
-            <span class="tag">code</span>
-            <span class="tag">music</span>
-            <span class="tag">tech articles</span>
-            <span class="tag">useful links</span>
-            <span class="tag">stupid stuff</span>
-        </div>
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section class="hero" aria-label="Introduction">
 
-        <div class="social-links">
-            <a href="https://cv.a-graham.uk" target="_blank" rel="noopener">[cv]</a>
-            <a href="https://github.com/alexgrahamuk666" target="_blank" rel="noopener">[github]</a>
-        </div>
+    <div class="hero-eyebrow rev r2">
+      <div class="hero-eyebrow-line"></div>
+      <div class="hero-eyebrow-text">Yet Another Ingenious Solution</div>
     </div>
 
-    <footer>
-        🚧 Coming soon™
-    </footer>
+    <h1 class="hero-word rev r2" aria-label="ingenious.">
+      ingenious<span class="hero-period">.</span><span class="cursor" aria-hidden="true"></span>
+    </h1>
+
+    <p class="hero-strap rev r3">
+      Because someone has to think of it.
+      <span class="aw">And it might as well be from Sunderland.</span>
+    </p>
+
+    <div class="hero-meta rev r4" aria-hidden="true">
+      <div class="hero-byline">
+        <strong>Alex Graham</strong> — software developer,<br/>
+        IoT tinkerer &amp; builder of things that probably shouldn't work.
+      </div>
+      <div class="hero-emojis">
+        <span title="Code">💻</span>
+        <span title="Music">🎹</span>
+        <span title="Ideas">💡</span>
+        <span title="IoT">🔌</span>
+        <span title="Audio">🎛️</span>
+        <span title="Chaos">🦆</span>
+      </div>
+      <div class="hero-loc">
+        North East England<br/>
+        20+ years. Still going.
+      </div>
+    </div>
+
+    <div class="hero-tags rev r5" aria-label="Topics and skills">
+      <span class="tag">PHP · Silverstripe</span>
+      <span class="tag">IoT · Raspberry Pi</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">Linux · VMware · ESXi</span>
+      <span class="tag">Multi-tenant SaaS</span>
+      <span class="tag">Docker · TeamCity</span>
+      <span class="tag">Legacy Modernisation</span>
+      <span class="tag">SAP Integration</span>
+      <span class="tag">RAID · NAS</span>
+      <span class="tag">Audio DSP · BPM</span>
+      <span class="tag">Techno · Trance</span>
+      <span class="tag">Happy Hardcore · Makina</span>
+      <span class="tag purple-tag">yet another ingenious solution.</span>
+    </div>
+
+  </section>
+
+
+
+  <!-- ══════════════════════════════════
+       EDITORIAL — About + Projects
+  ══════════════════════════════════ -->
+  <div class="editorial rev r6">
+
+    <div class="ed-main">
+      <div class="sec-kicker">About</div>
+      <h2 class="sec-title">Building things nobody said was possible.</h2>
+      <div class="body-text">
+        <p>20+ years building things on the web — from small business sites to
+        <strong>complex multi-tenant SaaS platforms</strong> that probably shouldn't
+        work but stubbornly do. Led development teams, mentored junior developers who
+        went on to remarkable things, and pushed the Silverstripe framework somewhere its
+        creators likely never intended.</p>
+
+        <p>Earlier in my career I worked as an <strong>electrician's mate</strong> —
+        domestic, commercial, PBX and network cabling installs. Those skills never
+        left. You'll still find me building servers, architecting networks and
+        soldering things that probably don't need soldering.</p>
+
+        <p>On the side: <strong>audio DSP and BPM analysis</strong> — port of
+        Bram de Jong's BPM code that ended up in commercial mixing software, released
+        quietly as <em>BigJimSlizards</em>. I also challenged my father to an audio
+        analysis programming competition once. I believe I won. He disagreed on
+        licensing grounds.</p>
+
+        <p>Currently building <strong>BookN</strong> — a scale-ready multi-client
+        booking platform. The stuff that's interesting to me is in the architecture:
+        single API endpoint, multiple client databases, Silverstripe's ORM pushed
+        hard. Informed by hard lessons from previous high-traffic production incidents
+        and a genuine love of the problem.</p>
+      </div>
+    </div>
+
+    <div class="ed-aside">
+      <div class="sec-kicker">Projects</div>
+      <div class="proj-list">
+
+        <div class="proj-item">
+          <div class="proj-status build">● In Development</div>
+          <a class="proj-name" href="#" rel="noopener">BookN</a>
+          <div class="proj-desc">Multi-client SaaS booking platform. Silverstripe-powered. Multi-tenant. Scale-ready from day one.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-status live">● Live</div>
+          <a class="proj-name" href="https://ingenious-solutions.co.uk" target="_blank" rel="noopener">ingenious-solutions.co.uk</a>
+          <div class="proj-desc">Yet Another Ingenious Solution. The mothership.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-status live">● Live</div>
+          <a class="proj-name" href="https://sunderlandscan.com" target="_blank" rel="noopener">sunderlandscan.com</a>
+          <div class="proj-desc">Sunderland. Scanned. Local information done properly.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-status live">● Live</div>
+          <a class="proj-name" href="https://cv.a-graham.uk">cv.a-graham.uk</a>
+          <div class="proj-desc">Full curriculum vitae. 20+ years. Available to download.</div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-status soon">○ Coming</div>
+          <a class="proj-name" href="#">Articles · a-graham.uk/articles</a>
+          <div class="proj-desc">Obscure tech, hard-to-find solutions and the stuff nobody else writes up properly.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /editorial -->
+
+  <!-- ══════════════════════════════════
+       ARTICLES
+  ══════════════════════════════════ -->
+  <section class="articles rev r6" aria-label="Articles coming soon">
+    <div class="sec-kicker">Articles — coming soon</div>
+    <div class="art-grid">
+
+      <div class="art-card">
+        <div class="art-num">01</div>
+        <div class="art-title">Recovering a 3TB VMDK from ESXi without the original host</div>
+        <div class="art-desc">The I/O error nobody documents properly. What actually works when vmware-fuse falls over past 250GB.</div>
+        <span class="art-badge">Soon</span>
+      </div>
+
+      <div class="art-card">
+        <div class="art-num">02</div>
+        <div class="art-title">Multi-tenant Silverstripe: the ORM is a swein but here's how</div>
+        <div class="art-desc">Tableless intermediate models, Traits as shared behaviour, keeping the CMS happy across multiple client databases.</div>
+        <span class="art-badge">Soon</span>
+      </div>
+
+      <div class="art-card">
+        <div class="art-num">03</div>
+        <div class="art-title">Scaling for a BBC News spike: what I did by lunchtime</div>
+        <div class="art-desc">When your host can't handle the traffic and you have three hours. The pragmatic fix nobody wanted to hear beforehand.</div>
+        <span class="art-badge">Soon</span>
+      </div>
+
+      <div class="art-card">
+        <div class="art-num">04</div>
+        <div class="art-title">IoT on the cheap: useful things with Raspberry Pi and scrap hardware</div>
+        <div class="art-desc">The stuff tutorials leave out. Real wiring, real failures, real results.</div>
+        <span class="art-badge">Soon</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MUSIC
+  ══════════════════════════════════ -->
+  <section class="music rev r7" aria-label="Music">
+    <div class="music-inner">
+      <div>
+        <div class="sec-kicker">Music</div>
+        <h2 class="music-headline">
+          Questionable<br/>productions.<br/><em>Occasionally<br/>good.</em>
+        </h2>
+        <p class="music-sub">
+          Techno, trance, happy hardcore, makina.<br/>
+          Armin van Buuren, Skudero, Pont Aeri,<br/>
+          DJ Ram and whatever else hits right at 2am.
+        </p>
+      </div>
+
+      <div class="music-grid">
+        <div class="music-card">
+          <div class="music-card-icon">🎛️</div>
+          <div class="music-card-title">Producing</div>
+          <div class="music-card-desc">Making things. Some of them accidentally sound good. Released quietly as BigJimSlizards.</div>
+          <span class="music-alias">BigJimSlizards</span>
+        </div>
+
+        <div class="music-card">
+          <div class="music-card-icon">🔊</div>
+          <div class="music-card-title">Techno · Trance</div>
+          <div class="music-card-desc">Armin van Buuren. Four to the floor. The kind that makes sense at volume.</div>
+        </div>
+
+        <div class="music-card">
+          <div class="music-card-icon">⚡</div>
+          <div class="music-card-title">Happy Hardcore · Makina</div>
+          <div class="music-card-desc">Skudero. Pont Aeri. DJ Ram. The stuff that doesn't get enough credit.</div>
+        </div>
+
+        <div class="music-card">
+          <div class="music-card-icon">💾</div>
+          <div class="music-card-title">Audio DSP</div>
+          <div class="music-card-desc">BPM analysis port in commercial use. Bass audio library. The code I wrote before it was cool to write it.</div>
+          <span class="music-alias">BPM · BigJimSlizards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FILE UPLOAD
+  ══════════════════════════════════ -->
+  <!--
+  <section class="upload-section rev r7" aria-label="File upload">
+    <div class="sec-kicker">Upload</div>
+    <h2 class="sec-title" style="margin-bottom:6px;">Drop a file.</h2>
+    <p style="font-family:'Epilogue',sans-serif;font-size:0.82rem;color:var(--ink-lt);margin-bottom:0;line-height:1.6;">
+      Extended file area — for sharing, review or just keeping things in one place.
+    </p>
+
+    <div class="upload-area" id="uploadArea" role="button" tabindex="0" aria-label="Click or drag to upload files">
+      <input type="file" id="fileInput" multiple accept="*/*" aria-label="Select files to upload"/>
+      <div class="upload-icon">📂</div>
+      <div class="upload-title">Drop files here or click to browse</div>
+      <div class="upload-desc">
+        Any file type. Multiple files supported.<br/>
+        Maximum 50MB per file.
+      </div>
+      <div class="upload-btn">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M8 1v10M3 6l5-5 5 5M1 13h14" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Choose files
+      </div>
+      <div class="upload-types">PDF · ZIP · PNG · JPG · DOC · MP3 · any format</div>
+    </div>
+
+    <div class="upload-list" id="uploadList"></div>
+  </section>
+  --> 
+
+  <!-- ══════════════════════════════════
+       LINKS
+  ══════════════════════════════════ -->
+  <div class="links-row rev r8" aria-label="External links">
+    <span class="links-label">Find me</span>
+
+    <a class="link-chip" href="https://github.com/alexgrahamuk666" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+    <a class="link-chip" href="https://ingenious-solutions.co.uk" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12.87V17H8v-2.13A7 7 0 0 1 12 2z"/></svg>
+      ingenious-solutions.co.uk
+    </a>
+    <a class="link-chip" href="https://sunderlandscan.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+      sunderlandscan.com
+    </a>
+    <a class="link-chip" href="https://cv.a-graham.uk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      CV
+    </a>
+  </div>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-l">
+      &copy; 2026 Alex Graham &nbsp;·&nbsp;
+      <a href="https://a-graham.uk">a-graham.uk</a> &nbsp;·&nbsp;
+      <a href="https://ingenious-solutions.co.uk" target="_blank" rel="noopener">ingenious-solutions.co.uk</a> &nbsp;·&nbsp;
+      <a href="https://sunderlandscan.com" target="_blank" rel="noopener">sunderlandscan.com</a>
+    </div>
+    <div class="footer-r">
+      Built with a little help from <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>.<br/>
+      🚧 more coming soon™
+    </div>
+  </footer>
+</div><!-- /page -->
+<!-- <script type="text/javascript" src="/upload.js" /> -->
 </body>
 </html>
